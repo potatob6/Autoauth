@@ -16,7 +16,7 @@ LEN=$((LEN+extraLEN))
 
 date
 echo "进行curl测试:${CURL_TEST}" 
-r1=$(curl http://4.ipw.cn | grep -P '^([0-9]{1,3}\.){3}[0-9]{1,3}$' )
+r1=$(curl --connect-timeout 5 http://4.ipw.cn | grep -P '^([0-9]{1,3}\.){3}[0-9]{1,3}$' )
 if [ $? -eq 0 ]; then
     echo "网络良好" 
     echo "=========================================" 
