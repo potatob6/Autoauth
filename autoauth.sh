@@ -24,7 +24,7 @@ if [ $? -eq 0 ]; then
 fi
 echo "网络无法连通" 
 
-udhcpc -i eth0
+udhcpc -i eth0 -n -t 10
 echo '进行第1次尝试' 
 result=$(curl -X POST http://${authserver}${authpath} \
               -H 'Content-Type: application/json' \
